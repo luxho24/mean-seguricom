@@ -1,0 +1,18 @@
+<section class="content">
+    <div class="target">
+        <h1>Iniciar Sesión</h1>
+        <hr>
+        <form (submit)="signIn()">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class='bx bx-envelope' ></i></span>
+                <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Correo electrónico" required autofocus>
+            </div>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class='bx bx-key' ></i></span>
+                <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Contraseña" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+        </form>
+        <!-- <p>¿No tienes una cuenta? <a href="">Regístrate aquí</a></p> -->
+    </div>
+</section>

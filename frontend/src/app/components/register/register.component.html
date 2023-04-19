@@ -1,0 +1,46 @@
+<section class="content">
+    <div class="target">
+        <h1>Registro</h1>
+        <hr>
+        <form (submit)="signUp()">
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class='bx bx-user'></i></span>
+                <input type="text" [(ngModel)]="user.firstname" name="firstname" class="form-control" placeholder="Nombre" required autofocus>
+            </div>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class='bx bx-user'></i></span>
+                <input type="text" [(ngModel)]="user.lastname" name="lastname" class="form-control" placeholder="Apellido" required>
+            </div>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class='bx bx-envelope' ></i></span>
+                <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Correo electrónico" required>
+            </div>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class='bx bx-phone' ></i></span>
+                <input type="text" [(ngModel)]="user.phone" name="phone" class="form-control" placeholder="Número de Teléfono" required>
+            </div>
+            <!-- <div class="input-group flex-nowrap align-items-center">
+                <span class="pe-3">Tipo de documento</span>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Seleccionar</option>
+                    <option value="1">DNI</option>
+                    <option value="2">Carnét de Extranjería</option>
+                </select>
+            </div> -->
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class='bx bx-id-card' ></i></span>
+                <input type="text" [(ngModel)]="user.document_number" name="document_number" class="form-control" placeholder="Número de documento" required>
+            </div>
+            <div class="input-group flex-nowrap align-items-center">
+                <span class="pe-3">Fecha de Nacimiento</span>
+                <input type="date" [(ngModel)]="user.birth_date" name="birth_date" class="form-control" required>
+            </div>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class='bx bx-key' ></i></span>
+                <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Contraseña" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </form>
+        <!-- <p>¿Ya tienes una cuenta? <a href="">Inicia Sesión aquí</a></p> -->
+    </div>
+</section>
