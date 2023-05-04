@@ -19,14 +19,17 @@
                 <span class="input-group-text" id="addon-wrapping"><i class='bx bx-phone' ></i></span>
                 <input type="text" [(ngModel)]="user.phone" name="phone" class="form-control" placeholder="Número de Teléfono" required>
             </div>
-            <!-- <div class="input-group flex-nowrap align-items-center">
+
+            <div class="input-group flex-nowrap align-items-center">
                 <span class="pe-3">Tipo de documento</span>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Seleccionar</option>
-                    <option value="1">DNI</option>
-                    <option value="2">Carnét de Extranjería</option>
+                <!-- <select class="form-select" aria-label="Default select example" [(ngModel)]="user.document_type"> -->
+                <select class="form-select" aria-label="Default select example" [(ngModel)]="user.document_type" [ngModelOptions]="{standalone: true}">
+                    <!-- <option selected>Seleccionar</option> -->
+                    <!-- <option *ngFor="let tipo of tipo_cliente" [value]="tipo.codigo">{{tipo.nombre}}</option> -->
+                    <option *ngFor="let tipo of tipo_cliente" [value]="tipo.tipo">{{tipo.tipo}}</option>
                 </select>
-            </div> -->
+            </div>
+
             <div class="input-group flex-nowrap">
                 <span class="input-group-text" id="addon-wrapping"><i class='bx bx-id-card' ></i></span>
                 <input type="text" [(ngModel)]="user.document_number" name="document_number" class="form-control" placeholder="Número de documento" required>
@@ -41,6 +44,10 @@
             </div>
             <button type="submit" class="btn btn-primary">Registrar</button>
         </form>
+
+        <pre>
+            {{ user | json }}
+        </pre>
         <!-- <p>¿Ya tienes una cuenta? <a href="">Inicia Sesión aquí</a></p> -->
     </div>
 </section>

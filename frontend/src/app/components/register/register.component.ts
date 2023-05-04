@@ -14,11 +14,21 @@ export class RegisterComponent implements OnInit {
     lastname: '',
     email: '',
     phone: '',
-    // document_type: '',
+    document_type: '',
     document_number: '',
     birth_date: '',
     password: ''
   }
+
+  tipo_cliente = [
+    {tipo: "Persona"},
+    {tipo: "Empresa"}
+  ]
+
+  // tipo_cliente = [
+  //   {codigo: "P", nombre: "Persona"},
+  //   {codigo: "E", nombre: "Empresa"}
+  // ]
 
   constructor(private authService: AuthService, private router: Router) {}
 
