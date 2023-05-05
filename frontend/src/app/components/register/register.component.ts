@@ -17,7 +17,8 @@ export class RegisterComponent implements OnInit {
     document_type: '',
     document_number: '',
     birth_date: '',
-    password: ''
+    password: '',
+    rol: 4
   }
 
   tipo_cliente = [
@@ -44,7 +45,9 @@ export class RegisterComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/private']);
+          if (this.user.rol == 4) {
+            this.router.navigate(['/cliente']);
+          }
         },
         err => console.log(err)
       )

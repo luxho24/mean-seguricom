@@ -9,6 +9,7 @@ const userSchema = new Schema({
     document_number: Number,
     birth_date: String,
     password: String,
+    rol: Number
 }, {
     timestamps: true
 });

@@ -12,13 +12,21 @@ import { PrivateTasksComponent } from './components/private-tasks/private-tasks.
 
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { VistaGerenteComponent } from './components/vista-gerente/vista-gerente.component';
+import { VistaAdministradorComponent } from './components/vista-administrador/vista-administrador.component';
+import { VistaEspecialistaComponent } from './components/vista-especialista/vista-especialista.component';
+import { VistaClienteComponent } from './components/vista-cliente/vista-cliente.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    PrivateTasksComponent
+    PrivateTasksComponent,
+    VistaGerenteComponent,
+    VistaAdministradorComponent,
+    VistaEspecialistaComponent,
+    VistaClienteComponent
   ],
   imports: [
     BrowserModule,
