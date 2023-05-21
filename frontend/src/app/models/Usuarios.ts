@@ -1,5 +1,5 @@
 export class Usuario {
-    _id?: number;
+    _id?: string;
     firstname: string;
     lastname: string;
     email: string;
@@ -8,9 +8,9 @@ export class Usuario {
     document_number: number;
     birth_date: string;
     password: string;
-    rol: number;
+    rol: string;
 
-    constructor(firstname: string, lastname: string, email: string, phone: number, document_type: string, document_number: number, birth_date: string, password: string, rol: number) {
+    constructor(firstname: string, lastname: string, email: string, phone: number, document_type: string, document_number: number, birth_date: string, password: string, rol: string) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
