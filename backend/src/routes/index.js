@@ -6,8 +6,8 @@ const jwt = require('jsonwebtoken');
 router.get('/', (req, res) => res.send('Hello world'));
 
 router.post('/register', async (req, res) => {
-    const {firstname, lastname, email, phone, document_type, document_number, birth_date, password, rol} = req.body;
-    const newUser = new User({firstname, lastname, email, phone, document_type, document_number, birth_date, password, rol});
+    const {firstname, lastname, email, phone, document_type, document_number, birth_date, password} = req.body;
+    const newUser = new User({firstname, lastname, email, phone, document_type, document_number, birth_date, password});
     // const {firstname, lastname, email, phone, document_number, birth_date, password} = req.body;
     // const newUser = new User({firstname, lastname, email, phone, document_number, birth_date, password});
     await newUser.save();
@@ -20,12 +20,19 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
     const {email, password} = req.body;
     const user = await User.findOne({email});
+    const rol = user.rol;
+    // console.log(user.rol);
+    // res.json({msg: user})
     
     if(!user) return res.status(401).send("The email doesn't exists");
     if(user.password !== password) return res.status(401).send("Wrong Password");
 
+    // if(user.rol == "4"){
+    //     res.redirect("/cliente");
+    // }
+
     const token = jwt.sign({_id: user._id}, 'secretkey');
-    return res.status(200).json({token});
+    return res.status(200).json({token, rol});
 });
 
 router.get('/tasks', (req, res) => {
